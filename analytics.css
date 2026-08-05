@@ -1,0 +1,582 @@
+/* ===================================================
+   EcoConnect – Food Waste Management System
+   Analytics Page Stylesheet (analytics.css)
+   OST Practical No. 4: Data Visualization using Matplotlib
+   =================================================== */
+
+/* Inherit EcoConnect Base Theme Colors */
+:root {
+    --eco-green-primary: #2E7D32;
+    --eco-green-dark: #1B5E20;
+    --eco-green-light: #E8F5E9;
+    --eco-green-border: #81C784;
+    --eco-bg-light: #F5FFF5;
+    --eco-card-bg: #FFFFFF;
+    --eco-text-dark: #333333;
+    --eco-text-muted: #555555;
+    --eco-shadow: 0 6px 20px rgba(46, 125, 50, 0.1);
+    --eco-shadow-hover: 0 12px 30px rgba(46, 125, 50, 0.18);
+}
+
+/* Base Body Styling */
+body.analytics-page {
+    background-color: var(--eco-bg-light);
+    color: var(--eco-text-dark);
+    overflow-x: hidden;
+}
+
+/* ===================================================
+   NAVBAR BOOTSTRAP OVERRIDE & UNIFICATION
+   Ensures exact 1:1 visual match with index.html, login.html, etc.
+   =================================================== */
+.analytics-page .navbar {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    border-bottom: 2px solid #81C784 !important;
+    padding: 0 !important;
+    display: block !important;
+    min-height: auto !important;
+}
+
+.analytics-page .nav-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 12px 20px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.analytics-page .brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+}
+
+.analytics-page .brand-logo {
+    width: 44px !important;
+    height: 44px !important;
+    object-fit: contain !important;
+}
+
+.analytics-page .brand-title {
+    color: #2E7D32 !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+.analytics-page .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 25px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.analytics-page .nav-menu li {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.analytics-page .nav-menu a:not(.btn-nav-login):not(.btn-nav-logout) {
+    text-decoration: none !important;
+    color: #333333 !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    transition: color 0.3s ease !important;
+    padding: 0 !important;
+}
+
+.analytics-page .nav-menu a:not(.btn-nav-login):not(.btn-nav-logout):hover,
+.analytics-page .nav-menu a:not(.btn-nav-login):not(.btn-nav-logout).active {
+    color: #2E7D32 !important;
+    font-weight: 600 !important;
+}
+
+.analytics-page .btn-nav-login,
+.analytics-page .btn-nav-logout {
+    background-color: #2E7D32 !important;
+    color: #FFFFFF !important;
+    padding: 8px 18px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+    transition: background-color 0.3s ease, transform 0.1s ease !important;
+    display: inline-block !important;
+    line-height: normal !important;
+}
+
+.analytics-page .btn-nav-login:hover,
+.analytics-page .btn-nav-logout:hover {
+    background-color: #1B5E20 !important;
+    color: #FFFFFF !important;
+}
+
+/* ===================================================
+   ANALYTICS HERO SECTION
+   =================================================== */
+.analytics-hero {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 100%);
+    border-bottom: 2px solid var(--eco-green-border);
+    padding: 50px 20px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.analytics-hero .hero-logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.analytics-hero .hero-logo:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.analytics-hero-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--eco-green-primary);
+    margin-bottom: 8px;
+}
+
+.analytics-hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4CAF50;
+    margin-bottom: 18px;
+}
+
+.analytics-hero-desc {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    font-size: 1rem;
+    color: var(--eco-text-muted);
+    line-height: 1.6;
+}
+
+/* Tech Badges */
+.analytics-badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tech-badge {
+    background-color: #FFFFFF;
+    color: var(--eco-green-primary);
+    border: 1.5px solid var(--eco-green-border);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background-color: var(--eco-green-primary);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   STATISTICS SECTION
+   =================================================== */
+.analytics-stats-section {
+    padding: 40px 0 20px;
+}
+
+.stat-box {
+    background-color: var(--eco-card-bg);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid rgba(129, 199, 132, 0.3);
+    border-top: 4px solid var(--eco-green-primary);
+    box-shadow: var(--eco-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--eco-shadow-hover);
+}
+
+.stat-box-icon {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.stat-box-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--eco-green-primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.stat-box-label {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--eco-text-muted);
+}
+
+/* ===================================================
+   GRAPHS SECTION & CARDS
+   =================================================== */
+.analytics-graphs-section {
+    padding: 30px 0 50px;
+}
+
+.section-header-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--eco-green-primary);
+    margin-bottom: 8px;
+}
+
+.section-main-subtitle {
+    font-size: 1rem;
+    color: var(--eco-text-muted);
+}
+
+/* Custom Bootstrap Card for Graphs */
+.graph-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #C8E6C9;
+    box-shadow: var(--eco-shadow);
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--eco-shadow-hover);
+    border-color: var(--eco-green-border);
+}
+
+/* Card Header */
+.graph-card-header {
+    background-color: var(--eco-green-light);
+    padding: 16px 20px;
+    border-bottom: 1px solid #C8E6C9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.graph-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--eco-green-primary);
+    margin: 0;
+}
+
+.graph-type-badge {
+    background-color: var(--eco-green-primary);
+    color: #FFFFFF;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card Image Area */
+.graph-img-wrapper {
+    background-color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-bottom: 1px solid #E8F5E9;
+    flex-shrink: 0;
+}
+
+.graph-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.graph-img-wrapper:hover .graph-img {
+    transform: scale(1.02);
+}
+
+.graph-zoom-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 125, 50, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.graph-img-wrapper:hover .graph-zoom-overlay {
+    opacity: 1;
+}
+
+.zoom-hint {
+    background: rgba(27, 94, 32, 0.85);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* Card Body */
+.graph-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.info-block {
+    background-color: #F9FDF9;
+    border-left: 4px solid var(--eco-green-primary);
+    padding: 12px 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.info-block.observation-block {
+    border-left-color: #4CAF50;
+    background-color: #F1F8E9;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--eco-green-dark);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-text {
+    font-size: 0.93rem;
+    color: var(--eco-text-dark);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ===================================================
+   PRACTICAL SUMMARY SECTION (OUTCOME)
+   =================================================== */
+.analytics-outcome-section {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--eco-green-border);
+    border-bottom: 1px solid var(--eco-green-border);
+    padding: 50px 0;
+    margin: 30px 0;
+}
+
+.outcome-card {
+    background-color: var(--eco-green-light);
+    border: 1px solid #C8E6C9;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: var(--eco-shadow);
+}
+
+.outcome-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.outcome-item {
+    background-color: #FFFFFF;
+    border: 1px solid #A5D6A7;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--eco-green-dark);
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.outcome-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12);
+    border-color: var(--eco-green-primary);
+}
+
+.outcome-check {
+    background-color: var(--eco-green-primary);
+    color: #FFFFFF;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* ===================================================
+   CONCLUSION SECTION
+   =================================================== */
+.analytics-conclusion-section {
+    padding: 40px 0 60px;
+}
+
+.conclusion-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 100%);
+    border: 2px solid var(--eco-green-border);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: var(--eco-shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.conclusion-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.conclusion-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--eco-green-primary);
+    margin-bottom: 15px;
+}
+
+.conclusion-text {
+    font-size: 1.02rem;
+    color: var(--eco-text-dark);
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto 15px;
+}
+
+.conclusion-badge {
+    display: inline-block;
+    background-color: var(--eco-green-primary);
+    color: #FFFFFF;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+}
+
+/* ===================================================
+   SCROLL ANIMATION CLASSES
+   =================================================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Delay Utilities */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* ===================================================
+   IMAGE LIGHTBOX MODAL
+   =================================================== */
+.analytics-modal-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   =================================================== */
+@media (max-width: 991.98px) {
+    .analytics-hero-title {
+        font-size: 2rem;
+    }
+    
+    .analytics-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .graph-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .analytics-hero {
+        padding: 35px 15px 30px;
+    }
+    
+    .analytics-hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .stat-box-value {
+        font-size: 1.8rem;
+    }
+
+    .conclusion-card {
+        padding: 25px 20px;
+    }
+}

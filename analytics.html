@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Data Visualization - EcoConnect</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Existing EcoConnect Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Analytics Custom CSS -->
+    <link rel="stylesheet" href="analytics.css">
+</head>
+<body class="analytics-page">
+
+    <!-- ===================================================
+       NAVIGATION BAR
+       =================================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="EcoConnect Logo" class="brand-logo">
+                <span class="brand-title">EcoConnect</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="analytics.html" class="active">Analytics</a></li>
+                <li class="nav-donate-item" style="display: none;"><a href="donation.html">Donate Food</a></li>
+                <li><a href="login.html" class="auth-nav-btn btn-nav-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===================================================
+       HERO SECTION
+       =================================================== -->
+    <header class="analytics-hero">
+        <div class="container">
+            <img src="images/logo.png" alt="EcoConnect Logo" class="hero-logo">
+            <h1 class="analytics-hero-title">Food Waste Data Analysis</h1>
+        </div>
+    </header>
+
+    <!-- ===================================================
+       GRAPHS SECTION
+       =================================================== -->
+    <section class="analytics-graphs-section" id="graphs">
+        <div class="container">
+            
+            <div class="section-header-wrap text-center">
+                <h2 class="section-main-title">Data Visualizations & Insights</h2>
+                <p class="section-main-subtitle">Graphical representation of food waste dataset generated in Jupyter Notebook</p>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Graph 1: Bar Chart -->
+                <div class="col-12 col-lg-6">
+                    <div class="graph-card animate-on-scroll">
+                        <div class="graph-card-header">
+                            <h3 class="graph-card-title">Graph 1: Average Food Wastage by Food Type</h3>
+                            <span class="graph-type-badge">Bar Chart</span>
+                        </div>
+                        <div class="graph-img-wrapper" title="Click to expand view">
+                            <img src="images/graphs/bar_chart.png" alt="Average Food Wastage by Food Type Bar Chart" class="graph-img" loading="lazy">
+                            <div class="graph-zoom-overlay">
+                                <span class="zoom-hint">🔍 Click to Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="graph-card-body">
+                            <div class="info-block">
+                                <div class="info-label">🎯 Purpose</div>
+                                <p class="info-text">Compare average food wastage among different food categories.</p>
+                            </div>
+                            <div class="info-block observation-block">
+                                <div class="info-label">💡 Observation</div>
+                                <p class="info-text">This graph identifies which food type contributes the highest average food waste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph 2: Pie Chart -->
+                <div class="col-12 col-lg-6">
+                    <div class="graph-card animate-on-scroll delay-1">
+                        <div class="graph-card-header">
+                            <h3 class="graph-card-title">Graph 2: Distribution of Food Types</h3>
+                            <span class="graph-type-badge">Pie Chart</span>
+                        </div>
+                        <div class="graph-img-wrapper" title="Click to expand view">
+                            <img src="images/graphs/pie_chart.png" alt="Distribution of Food Types Pie Chart" class="graph-img" loading="lazy">
+                            <div class="graph-zoom-overlay">
+                                <span class="zoom-hint">🔍 Click to Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="graph-card-body">
+                            <div class="info-block">
+                                <div class="info-label">🎯 Purpose</div>
+                                <p class="info-text">Show percentage contribution of different food categories.</p>
+                            </div>
+                            <div class="info-block observation-block">
+                                <div class="info-label">💡 Observation</div>
+                                <p class="info-text">The pie chart clearly illustrates the proportion of each food category in the dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph 3: Histogram -->
+                <div class="col-12 col-lg-6">
+                    <div class="graph-card animate-on-scroll">
+                        <div class="graph-card-header">
+                            <h3 class="graph-card-title">Graph 3: Distribution of Food Wastage Amount</h3>
+                            <span class="graph-type-badge">Histogram</span>
+                        </div>
+                        <div class="graph-img-wrapper" title="Click to expand view">
+                            <img src="images/graphs/histogram.png" alt="Distribution of Food Wastage Amount Histogram" class="graph-img" loading="lazy">
+                            <div class="graph-zoom-overlay">
+                                <span class="zoom-hint">🔍 Click to Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="graph-card-body">
+                            <div class="info-block">
+                                <div class="info-label">🎯 Purpose</div>
+                                <p class="info-text">Analyze the frequency distribution of food waste.</p>
+                            </div>
+                            <div class="info-block observation-block">
+                                <div class="info-label">💡 Observation</div>
+                                <p class="info-text">Most food wastage values fall within a particular range, while fewer records have extremely high wastage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph 4: Scatter Plot -->
+                <div class="col-12 col-lg-6">
+                    <div class="graph-card animate-on-scroll delay-1">
+                        <div class="graph-card-header">
+                            <h3 class="graph-card-title">Graph 4: Quantity of Food vs Wastage</h3>
+                            <span class="graph-type-badge">Scatter Plot</span>
+                        </div>
+                        <div class="graph-img-wrapper" title="Click to expand view">
+                            <img src="images/graphs/scatter_plot.png" alt="Quantity of Food vs Wastage Scatter Plot" class="graph-img" loading="lazy">
+                            <div class="graph-zoom-overlay">
+                                <span class="zoom-hint">🔍 Click to Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="graph-card-body">
+                            <div class="info-block">
+                                <div class="info-label">🎯 Purpose</div>
+                                <p class="info-text">Study the relationship between prepared food quantity and food waste.</p>
+                            </div>
+                            <div class="info-block observation-block">
+                                <div class="info-label">💡 Observation</div>
+                                <p class="info-text">Higher quantities of prepared food generally lead to greater food wastage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph 5: Line Chart (Full Width centered) -->
+                <div class="col-12 col-lg-8 mx-auto">
+                    <div class="graph-card animate-on-scroll">
+                        <div class="graph-card-header">
+                            <h3 class="graph-card-title">Graph 5: Household Food Waste by Country</h3>
+                            <span class="graph-type-badge">Line Chart</span>
+                        </div>
+                        <div class="graph-img-wrapper" title="Click to expand view">
+                            <img src="images/graphs/line_chart.png" alt="Household Food Waste by Country Line Chart" class="graph-img" loading="lazy">
+                            <div class="graph-zoom-overlay">
+                                <span class="zoom-hint">🔍 Click to Enlarge</span>
+                            </div>
+                        </div>
+                        <div class="graph-card-body">
+                            <div class="info-block">
+                                <div class="info-label">🎯 Purpose</div>
+                                <p class="info-text">Compare household food waste among countries.</p>
+                            </div>
+                            <div class="info-block observation-block">
+                                <div class="info-label">💡 Observation</div>
+                                <p class="info-text">Countries with higher household food waste require stronger food waste management strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+       IMAGE LIGHTBOX MODAL
+       =================================================== -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title text-success fw-bold" id="modalTitle">Graph Visualization</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-3">
+                    <img src="" id="modalImage" class="analytics-modal-img" alt="Enlarged Graph View">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================
+       FOOTER
+       =================================================== -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="donation.html">Donate Food</a></li>
+            </ul>
+            <div class="footer-info">
+                <p>Email: ecoconnect@gmail.com</p>
+                <p>&copy; 2026 EcoConnect | Created for OST Practical</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Analytics JS -->
+    <script src="analytics.js"></script>
+</body>
+</html>

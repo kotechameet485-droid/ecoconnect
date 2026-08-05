@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EcoConnect</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="EcoConnect Logo" class="brand-logo">
+                <span class="brand-title">EcoConnect</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="login.html" class="btn-nav-login active">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Container (Centered Login Card) -->
+    <div class="page-container">
+        <main class="form-card">
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Login to EcoConnect</p>
+            </div>
+
+            <!-- Success Alert Banner -->
+            <div id="loginSuccessAlert" class="alert-success"></div>
+
+            <!-- Future JavaScript Validation -->
+            <!-- Future Database Connection -->
+            <!-- Future Django Integration -->
+            <form id="loginForm" method="post" action="#">
+                
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <span class="error-msg" id="errEmail"></span>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" placeholder="Enter password (e.g. Pass@123)">
+                    <span class="error-msg" id="errPassword"></span>
+                </div>
+
+                <!-- Role Dropdown -->
+                <div class="form-group">
+                    <label for="role">Select Role <span class="required">*</span></label>
+                    <select id="role" name="role">
+                        <option value="" disabled selected>-- Select your role --</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="ngo">NGO</option>
+                        <option value="volunteer">Volunteer</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <span class="error-msg" id="errRole"></span>
+                </div>
+
+                <!-- Form Options -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        Remember Me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" id="loginBtn" class="btn-primary btn-block">Login</button>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                    <p style="margin-top: 8px;"><a href="index.html">&larr; Back to Home</a></p>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="footer-info">
+                <p>Email: ecoconnect@gmail.com</p>
+                <p>&copy; 2026 EcoConnect | Created for OST Practical</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
