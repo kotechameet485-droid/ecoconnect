@@ -465,3 +465,92 @@ textarea.invalid {
         padding: 25px 20px;
     }
 }
+
+/* ===================================================
+   OST PRACTICAL 7: JQUERY DOM DEMONSTRATION STYLES
+   =================================================== */
+.jquery-demo-section {
+    background: linear-gradient(180deg, rgba(245, 255, 245, 0.4) 0%, rgba(232, 245, 233, 0.5) 100%);
+    border-radius: 16px;
+}
+
+.eco-demo-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    border: 1px solid var(--eco-green-border);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Operation 5 & 7: Add & Toggle Class */
+.jquery-highlight {
+    border: 2px solid var(--eco-green) !important;
+    background-color: #E8F5E9 !important;
+    box-shadow: 0 10px 30px rgba(46, 125, 50, 0.25) !important;
+    transform: translateY(-3px);
+}
+
+/* Live Preview Card */
+.demo-preview-box {
+    background-color: #FAFAFA;
+    border: 1.5px dashed var(--eco-green-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.demo-preview-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--eco-text-muted);
+}
+
+.demo-preview-val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--eco-green);
+    margin-bottom: 0.5rem;
+}
+
+/* Dynamic Item Cards */
+.demo-item {
+    transition: all 0.25s ease;
+    border-left: 4px solid var(--eco-green) !important;
+}
+
+.demo-item:hover {
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.12) !important;
+}
+
+/* jQuery Action Buttons */
+.demo-action-btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 8px 14px;
+    transition: all 0.2s ease;
+}
+
+.demo-action-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Operation 13: Floating Toast Animation */
+.jquery-feedback-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1B5E20;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: none;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+

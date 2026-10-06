@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="donation.html">Donate Food</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jquery-demo">Interactive Demo</a>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                         <a href="login.html" class="auth-nav-btn btn-nav-logout text-center d-block d-lg-inline-block">Logout</a>
                     </li>
@@ -335,6 +338,166 @@
 
                     </div>
 
+                    <!-- ===================================================
+                       OST PRACTICAL 7: JQUERY DOM DEMONSTRATION SECTION
+                       =================================================== -->
+                    <div class="eco-form-card shadow-sm p-4 p-md-5 mt-5 jquery-demo-section" id="jquery-demo">
+                        
+                        <!-- Header -->
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4 pb-3 border-bottom">
+                            <div>
+                                <span class="badge bg-success text-white px-3 py-1 rounded-pill fw-semibold mb-1">
+                                    <i class="bi bi-code-slash me-1"></i> OST Practical No. 7
+                                </span>
+                                <h2 class="fw-bold text-success mb-1" id="demoTitle">EcoConnect jQuery DOM Demonstration</h2>
+                                <p class="text-muted small mb-0">Demonstrate interactive DOM manipulation using jQuery.</p>
+                            </div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small">
+                                <i class="bi bi-check-circle-fill me-1"></i> Live DOM Sandbox
+                            </span>
+                        </div>
+
+                        <!-- Operation 8: Show/Hide Instructions Area -->
+                        <div id="jqueryInstructions" class="alert alert-success border-success-subtle shadow-sm mb-4" role="alert">
+                            <div class="d-flex align-items-start gap-2">
+                                <i class="bi bi-shield-check fs-5 text-success"></i>
+                                <div>
+                                    <h6 class="fw-bold text-success mb-1">Donation Safety Instructions (Operation 8: Show / Hide)</h6>
+                                    <p class="small mb-0 text-muted">
+                                        Please provide fresh, hygienic, and safe surplus food for donation. Ensure cooked meals are kept properly sealed and collected within safe consumption windows.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Demo Card (Target for Operations 1, 5, 6, 7, 9) -->
+                        <div class="eco-demo-card p-4 mb-4" id="demoCard">
+                            
+                            <!-- Demo Input Controls (Operations 9 & 12) -->
+                            <form id="jqueryDemoForm" class="mb-4">
+                                <h5 class="fw-bold text-success mb-3 d-flex align-items-center gap-2">
+                                    <i class="bi bi-input-cursor-text"></i> Interactive Food Inputs
+                                </h5>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="demoFoodName" class="form-label fw-semibold small">
+                                            Food Name:
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-basket2"></i></span>
+                                            <input type="text" class="form-control" id="demoFoodName" value="Rice" placeholder="e.g. Rice">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="demoFoodCategory" class="form-label fw-semibold small">
+                                            Food Category:
+                                        </label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-tags"></i></span>
+                                            <select class="form-select" id="demoFoodCategory">
+                                                <option value="Grains" selected>Grains</option>
+                                                <option value="Cooked Meals">Cooked Meals</option>
+                                                <option value="Bakery & Bread">Bakery & Bread</option>
+                                                <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                                                <option value="Dairy Products">Dairy Products</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <button type="button" id="updatePreviewBtn" class="btn btn-eco-primary btn-sm px-3 demo-action-btn">
+                                        <i class="bi bi-arrow-repeat me-1"></i> Update Preview
+                                    </button>
+                                </div>
+                            </form>
+
+                            <hr class="text-secondary opacity-25 my-4">
+
+                            <!-- Live Donation Preview (Operations 1, 2, 3, 4, 9) -->
+                            <div class="demo-preview-box mb-4" id="donationPreview">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h6 class="fw-bold text-success mb-0 d-flex align-items-center gap-2">
+                                        <i class="bi bi-broadcast"></i> Live Donation Preview
+                                    </h6>
+                                    <span class="badge bg-success-subtle text-success small">Live Preview</span>
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-4">
+                                        <div class="demo-preview-label">Food:</div>
+                                        <div class="demo-preview-val" id="previewFood">Rice</div>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="demo-preview-label">Category:</div>
+                                        <div class="demo-preview-val" id="previewCategory">Grains</div>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="demo-preview-label">Status:</div>
+                                        <div class="demo-preview-val text-success" id="previewStatusText">Ready for Donation</div>
+                                    </div>
+                                </div>
+
+                                <!-- Operation 3: HTML Manipulation Badge Area -->
+                                <div class="mt-3" id="previewBadgeArea">
+                                    <span class="badge bg-secondary-subtle text-secondary px-3 py-2 rounded-pill fw-semibold">
+                                        <i class="bi bi-shield me-1"></i> Standard Surplus Inspection Pending
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Actions Section (Operations 2, 3, 4, 5, 6, 7, 8, 10, 11) -->
+                            <div class="mb-4">
+                                <h6 class="fw-bold text-dark mb-3 d-flex align-items-center gap-2">
+                                    <i class="bi bi-sliders"></i> Actions:
+                                </h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="changeTextBtn">
+                                        <i class="bi bi-fonts me-1"></i> Change Text
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="changeHtmlBtn">
+                                        <i class="bi bi-code-slash me-1"></i> Format HTML
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="changeCssBtn">
+                                        <i class="bi bi-palette me-1"></i> Style Preview
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="addHighlightBtn">
+                                        <i class="bi bi-plus-square me-1"></i> Highlight Card
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="removeHighlightBtn">
+                                        <i class="bi bi-dash-square me-1"></i> Remove Highlight
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="toggleHighlightBtn">
+                                        <i class="bi bi-toggles me-1"></i> Toggle Highlight
+                                    </button>
+                                    <button type="button" class="btn btn-outline-success demo-action-btn" id="toggleInstructionsBtn">
+                                        <i class="bi bi-eye-slash me-1"></i> Show/Hide Instructions
+                                    </button>
+                                    <button type="button" class="btn btn-eco-primary demo-action-btn" id="addItemBtn">
+                                        <i class="bi bi-plus-circle me-1"></i> Add Item
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger demo-action-btn" id="removeItemBtn">
+                                        <i class="bi bi-trash me-1"></i> Remove Item
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Operations 10 & 11: Dynamic Items Container -->
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="fw-bold text-success mb-0 d-flex align-items-center gap-2">
+                                        <i class="bi bi-list-check"></i> Dynamic Donation Items
+                                    </h6>
+                                    <span class="badge bg-light text-muted small border">Created via .append()</span>
+                                </div>
+
+                                <div id="dynamicDonationList" class="mt-2"></div>
+                                <div id="itemMessage" class="alert alert-warning py-2 small mt-2" style="display: none;"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -398,6 +561,10 @@
 
     <!-- Bootstrap 5.3.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery 3.7.1 CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- jQuery DOM Manipulation Script (OST Practical 7) -->
+    <script src="jquery.js"></script>
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
